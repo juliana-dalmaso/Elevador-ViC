@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var qualAndar: Button
     lateinit var entrar: Button
     lateinit var sair: Button
-    var Exibir = Elevador(0, 0)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,59 +29,53 @@ class MainActivity : AppCompatActivity() {
         sair = findViewById(R.id.btnSair)
 
         val totalAndar = 10
-        var totalPessoas = 0
-        andar.text = "Térreo"
-        pessoas.text = "$totalPessoas de 5"
+        var Exibir = Elevador(0, 0)
 
+        andar.text = "Térreo"
+        pessoas.text = "0 de 5"
 
         qualAndar.setOnClickListener{
-
 
             val Andar = andarAtual?.text.toString()
             val AndarEmNumero = Andar.toIntOrNull()
 
-        AndarEmNumero?.let {
-            if (AndarEmNumero > totalAndar || AndarEmNumero < 0){
-                 Toast.makeText(
-                    this,"Andar não existe!", Toast.LENGTH_SHORT).show()
+            AndarEmNumero?.let {
+                if (AndarEmNumero > totalAndar || AndarEmNumero < 0){
+                     Toast.makeText(
+                        this,"Andar não existe!", Toast.LENGTH_SHORT).show()
+                }
+
+                else{
+                    Exibir.andar = AndarEmNumero
+
+                    if(Exibir.andar == 0)
+                        andar.text = "Térreo"
+                    else andar.text = "${Exibir.andar} º andar"
+                }
+
             }
-
-            else{
-                Exibir.andar = AndarEmNumero
-
-                if(Exibir.andar == 0)
-                    andar.text = "Térreo"
-                else andar.text = "${Exibir.andar} º andar"
-            }
-
-        }
 
         }
 
         entrar.setOnClickListener{
 
-                if (totalPessoas > 4)
+                if (Exibir.pessoas > 4)
                     Toast.makeText(this, "Elevador lotado!", Toast.LENGTH_SHORT).show()
                 else {
-                    totalPessoas = totalPessoas + 1
-
-                    Exibir.pessoas = totalPessoas
+                    Exibir.pessoas = Exibir.pessoas + 1
                     pessoas.text = "${Exibir.pessoas} de 5"
                 }
-
 
         }
 
         sair.setOnClickListener {
-                if (totalPessoas == 0)
+                if (Exibir.pessoas == 0)
                     Toast.makeText(this, "Elevador vazio!", Toast.LENGTH_SHORT).show()
                 else {
-                    totalPessoas = totalPessoas - 1
-                    Exibir.pessoas = totalPessoas
+                    Exibir.pessoas = Exibir.pessoas - 1
                     pessoas.text = "${Exibir.pessoas} de 5"
                 }
             }
-
 
         }
 

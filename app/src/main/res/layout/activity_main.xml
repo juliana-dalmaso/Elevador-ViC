@@ -91,7 +91,7 @@
         <Button
             android:id="@+id/btnSair"
             android:layout_width="100dp"
-            android:layout_height="37dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@android:color/holo_red_dark"
             android:text="Sair" />
