@@ -7,14 +7,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cinza"
+    android:background="?attr/colorButtonNormal"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
+        android:layout_margin="24dp"
         android:text="Você está no"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +27,7 @@
         android:id="@+id/txtAndar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -35,11 +35,13 @@
 
     <TextView
         android:id="@+id/txtPessoas"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:textSize="30sp"
         android:background="@drawable/background"
         android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -49,9 +51,11 @@
         android:id="@+id/edtAndar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:ems="10"
+        android:layout_margin="20dp"
+        android:ems="15"
         android:hint="Digite um andar "
+        android:paddingLeft="30dp"
+        android:background="#E8E9F1"
         android:inputType="number"
         tools:layout_editor_absoluteX="18dp"
         tools:layout_editor_absoluteY="21dp" />
@@ -61,7 +65,7 @@
         android:layout_width="287dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/teal_200"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="Ir para o andar selecionado" />
 
     <TextView
@@ -84,8 +88,9 @@
             android:id="@+id/btnEntrar"
             android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="52dp"
             android:layout_gravity="center"
-            android:background="#8BE333"
+            android:backgroundTint="@color/verde"
             android:text="Entrar" />
 
         <Button
@@ -93,7 +98,8 @@
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:background="@android:color/holo_red_dark"
+            android:layout_marginLeft="52dp"
+            android:backgroundTint="@android:color/holo_red_dark"
             android:text="Sair" />
 
 
